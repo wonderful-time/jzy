@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>高仿产品</title>
+	<script src="jquery.js"></script>
+</head>
+<style>
+	*{
+		padding:0;
+		margin:0;
+		list-style:none;
+	}
+
+	.box{
+		width: 630px;
+		height:392px;
+		border:1px solid #fff;
+		margin:40px auto;
+		overflow: hidden;
+		padding:10px 0 0 10px;
+	}
+	.box li{
+		width:200px;height:186px;float:left;
+		margin-right: 10px;
+		margin-bottom:10px;
+		cursor: pointer;
+	}
+	p{	
+		/*display: none;*/
+		text-align: center;
+		line-height: 30px;
+	}
+	input{
+		display: block;
+		margin:0 auto;
+	}
+	h1{
+		color:#fff;
+		text-align: center;
+	}
+</style>
+<body>
+	<h1>学到后边我自己都害怕，学不会了怎么办</h1>
+	<div class="box">
+		<ul>
+			<li>
+				<img src="http://hovertree.com/texiao/jquery/1/images/01.jpg" alt="">
+			</li>
+			<li>
+				<img src="http://hovertree.com/texiao/jquery/1/images/02.jpg" alt="">
+			</li>
+			<li>
+				<img src="http://hovertree.com/texiao/jquery/1/images/03.jpg" alt="">
+			</li>
+			<li>
+				<img src="http://hovertree.com/texiao/jquery/1/images/04.jpg" alt="">
+			</li>
+			<li>
+				<img src="http://hovertree.com/texiao/jquery/1/images/05.jpg" alt="">
+			</li>
+			<li>
+				<img src="http://hovertree.com/texiao/jquery/1/images/06.jpg" alt="">
+			</li>
+		</ul>
+	</div>
+	<div style="text-align:center:margin:50px 0;font:normal 14/24px 'MicroSoft YaHei';color:white;">
+		<p>适用浏览器：IE8、360、FireFox、Chrome、Safari、Opera、傲游、搜狗、世界之窗.</p>
+		<input type="button" name="sou" value="按钮">
+	</div>
+
+</body>
+<script>
+	$(function(){
+		$("input[name]").on("click",function(){
+			$("p").fadeOut();
+		})
+		// console.log($("input[name]"))
+		$(".box li").mouseover(function(){
+			$(this).siblings().stop().fadeTo(500,0.4);
+		});
+		$(".box li").mouseout(function(){
+			$(this).siblings().stop().fadeTo(500,1);
+		});
+	})
+	document.bgColor="#000";
+</script>
+</html>

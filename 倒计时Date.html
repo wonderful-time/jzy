@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>倒计时</title>
+	<script src="function.js"></script>
+</head>
+<style>
+	*{
+		padding:0;
+		margin:0;
+		list-style: none;
+	}
+	#box{
+		width: 800px;
+		height: 100px;
+		font-size: 40px;
+		line-height: 100px;
+		text-align:center;
+		margin:0 auto;
+		font-family: "宋体"
+	}
+	#box:hover{
+		font-size: 60px;
+		color:red;
+		transition:all 0.5;
+	}
+	body{
+		margin-top: 50px;
+		text-align: center;
+		font-weight: bold;
+		font-size: 40px;
+	}
+	span{
+		color:red;
+	}
+	.time{
+		margin-top:100px;
+		padding:60px 60px;
+		background: yellowgreen;
+	}
+	.pox{
+		width: 100px;
+		height: 30px;
+		background: yellowgreen;
+		position: fixed;
+		bottom:30px;
+		right:0;
+		font-family: "方正姚体";
+		text-align: center;
+		font-size: 24px;
+	}
+	.pox:hover{
+		font-size: 32px;
+		color:red;
+	}
+</style>
+<body>
+	<div id="box">
+		距离2017.4.10找工作还有
+	</div>
+	<div class="time">
+		距离2017.4.10还有：
+		<span id="td">00</span>天
+		<span id="th">00</span>时
+		<span id="tm">00</span>分
+		<span id="ts">00</span>秒
+		<!-- <span id="tmin">00</span>毫秒 -->
+	</div>
+	<div class="pox">
+		靖赞誉
+	</div>
+</body>
+<script>
+function getTime(){
+		var td=$("#td");
+		var th=$("#th");
+		var tm=$("#tm");
+		var ts=$("#ts");
+		var tmin=$("#tmin");
+		var NowTime=new Date();
+		var EndTime=new Date('2017/03/20 00:00:00');
+		t=EndTime.getTime()-NowTime.getTime();
+		var d=0,h=0,s=0,m=0,min=0;
+		if(t>=0){
+			d=Math.floor(t/1000/60/60/24);
+			h=Math.floor(t/1000/60/60%24);
+			s=Math.floor(t/1000/60%60);
+			m=Math.floor(t/1000%60);
+			// min=Math.floor(t%1000);
+		}
+		td.innerHTML=d;
+		th.innerHTML=h;
+		tm.innerHTML=s;
+		ts.innerHTML=m;
+		// tmin.innerHTML=min;
+	}
+	setInterval(getTime,0)
+</script>
+</html>
